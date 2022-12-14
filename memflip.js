@@ -93,7 +93,7 @@ class MemFlip {
 				card.classList.remove('-flipped')
 			})
 			this.flipping = false
-		}, 1000)
+		}, 750)
 	}
 }
 
