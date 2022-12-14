@@ -10,13 +10,14 @@
 	<div style="display: flex; justify-content: center;">
 		<div id="game" style="width: 500px;"></div>
 	</div>
-	<div style="margin: 2rem; text-align: center;">
+	<div style="display: flex; margin: 2rem; justify-content: center; align-items: center; gap: 1rem">
 		<button id="btnReset">Reset</button>
+		<input type="number" id="inpFlipCount" readonly value="0">
 	</div>
 	<div style="text-align: center;"><a href="https://www.flaticon.com/free-icons/vegan" title="vegan icons">Vegan icons created by smashingstocks - Flaticon</a></div>
 	<script type="module">
 		import MemFlip from './memflip.js';
-		const game = new MemFlip.Game('game', {
+		const game = new MemFlip('game', {
 			size: [4, 4],
 			images: [
 				'images/001-apple pie.svg',
@@ -77,7 +78,10 @@
 				'images/060-toaster.svg',
 				'images/061-turnip.svg',
 				'images/062-waffle.svg',
-			]
+			],
+			onStart: () => document.getElementById('inpFlipCount').value = 0,
+			onFinish: () => setTimeout(() => alert('🎉'), 500),
+			onFlip: () => document.getElementById('inpFlipCount').value++
 		})
 		document.getElementById('btnReset').addEventListener('click', () => game.reset())
 	</script>
