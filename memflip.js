@@ -17,6 +17,7 @@ class MemFlip {
 			cards[k].style.order = i
 			cards.splice(k, 1)
 		}
+		if (this.options.onStart) this.options.onStart()
 	}
 
 	makeCards() {
@@ -50,9 +51,14 @@ class MemFlip {
 		if (this.flipping) return
 		if (card.classList.contains('-matched')) return
 		card.classList.toggle('-flipped')
+		if (this.options.onFlip) this.options.onFlip(card)
 		if (this.pairFlipped()) {
-			if (this.pairMatched()) this.markMatched()
-			else this.unflipCards()
+			if (this.pairMatched()) {
+				this.markMatched()
+				if (this.allMatched() && this.options.onFinish) this.options.onFinish()
+			} else {
+				this.unflipCards()
+			}
 		}
 	}
 
@@ -68,6 +74,10 @@ class MemFlip {
 			if (image != img.src) matched = false
 		})
 		return matched
+	}
+
+	allMatched() {
+		return this.el.querySelectorAll('.-matched').length == this.el.querySelectorAll('.memflip__card').length
 	}
 
 	markMatched() {
