@@ -1,6 +1,4 @@
-const MemFlip = {}
-
-class Game {
+class MemFlip {
 	constructor(el, options) {
 		if (typeof el == 'string') el = document.getElementById(el)
 		this.el = el
@@ -93,6 +91,5 @@ class Game {
 		}, 1000)
 	}
 }
-MemFlip.Game = Game
 
 export default MemFlip
