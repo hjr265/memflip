@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MemFlip</title>
+	<link rel="stylesheet" type="text/css" href="./memflip.css">
+</head>
+<body>
+	<div style="display: flex; justify-content: center;">
+		<div id="game" style="width: 500px;"></div>
+	</div>
+	<div style="margin: 2rem; text-align: center;">
+		<button id="btnReset">Reset</button>
+	</div>
+	<div style="text-align: center;"><a href="https://www.flaticon.com/free-icons/vegan" title="vegan icons">Vegan icons created by smashingstocks - Flaticon</a></div>
+	<script type="module">
+		import MemFlip from './memflip.js';
+		const game = new MemFlip.Game('game', {
+			size: [4, 4],
+			images: [
+				'images/001-apple pie.svg',
+				'images/002-avocado.svg',
+				'images/003-baguette.svg',
+				'images/004-banana.svg',
+				'images/005-barley.svg',
+				'images/006-beer mug.svg',
+				'images/007-biscuit.svg',
+				'images/008-boiled egg.svg',
+				'images/009-eggplant.svg',
+				'images/010-broccoli.svg',
+				'images/011-Capsicum.svg',
+				'images/012-carrot.svg',
+				'images/013-cauliflower.svg',
+				'images/014-cheese slice.svg',
+				'images/015-cake.svg',
+				'images/016-chicken leg.svg',
+				'images/017-turkey.svg',
+				'images/018-sandwich.svg',
+				'images/019-coffee.svg',
+				'images/020-coffee bean.svg',
+				'images/021-corn dog.svg',
+				'images/022-croissant.svg',
+				'images/023-cutlery.svg',
+				'images/024-donut.svg',
+				'images/026-food package.svg',
+				'images/027-sausage.svg',
+				'images/029-garlic.svg',
+				'images/030-chilli.svg',
+				'images/031-steak.svg',
+				'images/033-chocolate.svg',
+				'images/034-honey dipper.svg',
+				'images/035-ice cream.svg',
+				'images/036-italian pizza.svg',
+				'images/037-ketchup bottle.svg',
+				'images/038-spade.svg',
+				'images/039-soup ladle.svg',
+				'images/040-loaf.svg',
+				'images/042-lollipop.svg',
+				'images/043-lunch box.svg',
+				'images/044-maki.svg',
+				'images/045-mushroom.svg',
+				'images/046-pasta.svg',
+				'images/047-burger.svg',
+				'images/048-peanut.svg',
+				'images/049-peas.svg',
+				'images/050-pistachio.svg',
+				'images/051-taco.svg',
+				'images/052-pizza slice.svg',
+				'images/053-hotdog.svg',
+				'images/054-shawarma.svg',
+				'images/055-skewer.svg',
+				'images/056-steak.svg',
+				'images/057-swiss roll.svg',
+				'images/058-disposable.svg',
+				'images/059-tea pot.svg',
+				'images/060-toaster.svg',
+				'images/061-turnip.svg',
+				'images/062-waffle.svg',
+			]
+		})
+		document.getElementById('btnReset').addEventListener('click', () => game.reset())
+	</script>
+</body>
+</html>

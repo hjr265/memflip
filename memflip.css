@@ -1,0 +1,41 @@
+.memflip__board {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+}
+.memflip__card {
+	position: relative;
+	aspect-ratio: 1 / 1;
+	border: 5px solid #22313f;
+	border-radius: 5px;
+	background: white;
+	transform: rotateY(0deg);
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+.memflip__card.-flipped {
+	transform: rotateY(180deg);
+}
+.memflip__card.-matched {
+	border-color: #26c281;
+}
+.memflip__card.-unmatched {
+	border-color: #e35b5a;
+}
+.memflip__cardfront, .memflip__cardback {
+	position: absolute;
+	inset: 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.memflip__cardfront {
+	padding: 15%;
+	background-color: #e7ecf1;
+	transform: rotateY(180deg);
+}
+.memflip__cardfront img {
+	width: 100%;
+}
+.memflip__cardback {
+	background-color: #22313f;
+}

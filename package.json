@@ -1,0 +1,14 @@
+{
+  "name": "memflip",
+  "version": "1.0.0",
+  "description": "",
+  "main": "memflip.js",
+  "scripts": {
+    "serve": "serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "serve": "^14.1.2"
+  }
+}
