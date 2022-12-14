@@ -11,16 +11,11 @@ class MemFlip {
 		const cards = this.makeCards()
 		this.el.innerHTML = ''
 		this.el.classList.add('memflip__board')
-		const [w, h] = this.options.size
-		for (let i = 0; i < h; i++) {
-			for (let j = 0; j < w; j++) this.el.appendChild(cards[i*h+j])
-		}
-		const n = cards.length
-		for (let i = 0; i < n; i++) {
+		for (let i = 0; i < cards.length; i++) this.el.appendChild(cards[i])
+		for (let i = 0, n = cards.length; i < n; i++) {
 			const k = Math.floor(Math.random()*cards.length)
-			const card = cards[k]
+			cards[k].style.order = i
 			cards.splice(k, 1)
-			card.style.order = i
 		}
 	}
 
