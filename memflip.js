@@ -37,7 +37,7 @@ class Game {
 			for (let j = 0; j < 2; j++) {
 				const card = document.createElement('div')
 				card.classList.add('memflip__card')
-				card.addEventListener('click', this.onCardClick.bind(this, card))
+				card.addEventListener('click', () => this.onCardClick(card))
 				const front = document.createElement('div')
 				front.classList.add('memflip__cardfront')
 				card.appendChild(front)
