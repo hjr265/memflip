@@ -7,14 +7,16 @@
 	<link rel="stylesheet" type="text/css" href="./memflip.css">
 </head>
 <body>
-	<div style="display: flex; justify-content: center;">
-		<div id="game" style="width: 500px;"></div>
+	<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;">
+		<div style="display: flex; justify-content: center; max-width: 100%;">
+			<div id="game" style="width: 500px;"></div>
+		</div>
+		<div style="display: flex; margin: 2rem; justify-content: center; align-items: center; gap: 1rem">
+			<button id="btnReset">Reset</button>
+			<input type="number" id="inpFlipCount" readonly value="0">
+		</div>
+		<div style="text-align: center;"><a href="https://www.flaticon.com/free-icons/vegan" title="vegan icons">Vegan icons created by smashingstocks - Flaticon</a></div>
 	</div>
-	<div style="display: flex; margin: 2rem; justify-content: center; align-items: center; gap: 1rem">
-		<button id="btnReset">Reset</button>
-		<input type="number" id="inpFlipCount" readonly value="0">
-	</div>
-	<div style="text-align: center;"><a href="https://www.flaticon.com/free-icons/vegan" title="vegan icons">Vegan icons created by smashingstocks - Flaticon</a></div>
 	<script type="module">
 		import MemFlip from './memflip.js';
 		const game = new MemFlip('game', {
